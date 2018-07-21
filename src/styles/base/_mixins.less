@@ -1,0 +1,131 @@
+//Fonts
+.font-face(@alias, @name){
+  @font-face {
+    font-family: @alias;
+    src: url("../../fonts/@{name}.eot");
+    src: url("../../fonts/@{name} + .eot?#iefix") format("embedded-opentype"),
+    url("../fonts/@{name}.woff") format("woff"),
+    url("../fonts/@{name}.woff2") format("woff2"),
+    url("../fonts/@{name}.svg") format("svg"),
+    url("../fonts/@{name}.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+  }
+}
+
+.padding(@val_1, @val_2){
+  padding: @val_1 @val_2;
+}
+.margin(@val_1, @val_2){
+  margin: @val_1 @val_2;
+}
+
+//Clearfix
+.clearfix(){
+  &:before,&:after{
+    content: "";
+    display: table;
+  }
+  &:after{
+    clear: both
+  }
+}
+
+//Box-sizing
+.box-sizing(@box-model){
+  -webkit-box-sizing: @box-model;
+  -moz-box-sizing: @box-model;
+  box-sizing: @box-model;
+}
+
+//Transition
+.transition(@transition){
+  -moz-transition: @transition;
+  -o-transition: @transition;
+  -webkit-transition: @transition;
+  transition: @transition;
+
+}
+
+//Trasforms
+.transform(@transform){
+  -moz-transform: @transform;
+  -o-transform: @transform;
+  -ms-transform: @transform;
+  -webkit-transform: @transform;
+  transform: @transform;
+}
+
+
+//Box-shadow
+.box-shadow(@shadow){
+  -webkit-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  -ms-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+
+//Border-radius
+.border-radius(@radius){
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+  background-clip: padding-box;
+}
+
+//Flexbox module
+.flexbox{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flex-direction(@direction){
+  -webkit-flex-direction: @direction;
+  -ms-flex-direction: @direction;
+  flex-direction: @direction;
+}
+.flex-item(@number) {
+  -webkit-box-flex: @number;
+  -moz-box-flex: @number;
+  -webkit-flex: @number;
+  -ms-flex: @number;
+  flex: @number;
+}
+.align-content(@align: stretch) {
+  -webkit-align-content: @align;
+  -ms-align-content: @align;
+  align-content: @align;
+}
+.align-items(@align: stretch) {
+  -webkit-align-items: @align;
+  -ms-align-items: @align;
+  align-items: @align;
+}
+.justify-content(@justify: flex-start) {
+  -webkit-justify-content: @justify;
+  -ms-justify-content: @justify;
+  justify-content: @justify;
+}
+.flex-wrap(@wrap: nowrap) {
+  -webkit-flex-wrap: @wrap;
+  -ms-flex-wrap: @wrap;
+  flex-wrap: @wrap;
+}
+
+//Animations
+.animation(@arguments) {
+  -webkit-animation: @arguments;
+  -moz-animation: @arguments;
+  animation: @arguments;
+}
+.keyframes(@name; @arguments) {
+  @-moz-keyframes @name { @arguments(); }
+  @-webkit-keyframes @name { @arguments(); }
+  @keyframes @name { @arguments(); }
+}
+
+@mobile:      ~"screen and (max-width: 768px) and (min-width:320px)";
+@mobile_xs:      ~"screen and (max-width: 480px) and (min-width: 320px)";
+
+
